@@ -3,6 +3,7 @@ import 'package:arvent/authentication/logIn/logIn_screen.dart';
 import 'package:arvent/authentication/signUp/signUp_screen.dart';
 import 'package:arvent/authentication/splash/splash_screen.dart';
 import 'package:arvent/eventScreen/event_screen.dart';
+import 'package:arvent/eventScreen/payments_screen.dart';
 import 'package:arvent/gettingStarted/gettingStartedScreen/gettingStarted_screen.dart';
 import 'package:arvent/mainScreen/main/mainLoading_screen.dart';
 import 'package:arvent/mainScreen/main/mainScreen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: GettingStartedScreen.id,
+      initialRoute: LoadingScreen.id,
       routes: {
         GettingStartedScreen.id: (context) => GettingStartedScreen(),
         SplashScreen.id: (context) => SplashScreen(),
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         LoadingScreen.id: (context) => LoadingScreen(),
         MainLoadingScreen.id: (context) => MainLoadingScreen(),
         EventScreen.id: (context) => EventScreen(),
+        PaymentScreen.id: (context) => PaymentScreen(),
       },
     );
   }

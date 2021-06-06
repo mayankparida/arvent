@@ -76,8 +76,12 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.popAndPushNamed(context, SplashScreen.id);
                         },
                         child: CircleAvatar(
+                          backgroundColor: Colors.red,
                           radius: 18.0,
-                          child: Icon(Icons.notifications_on_rounded),
+                          child: Icon(
+                            Icons.power_settings_new_rounded,
+                            color: Colors.white,
+                          ),
                         ),
                       )
                     ],
