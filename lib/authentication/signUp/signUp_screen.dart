@@ -18,6 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String email;
   String password;
   final _auth = FirebaseAuth.instance;
+  bool error = false;
   storeemail() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("email", email);
@@ -81,6 +82,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 },
               ),
               SizedBox(
+                height: 15.0,
+              ),
+              if (error == true)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Invalid Credentials or Network Issue",
+                      style: TextStyle(
+                          color: Colors.red, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              SizedBox(
                 height: 24.0,
               ),
               RoundButton(
@@ -95,13 +110,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           await _auth.createUserWithEmailAndPassword(
                               email: email, password: password);
                       if (new_user != null) {
+                        setState(() {
+                          error = false;
+                        });
                         storeemail();
-                        Navigator.pushNamed(context, MainLoadingScreen.id);
+                        Navigator.pushReplacementNamed(
+                            context, MainLoadingScreen.id);
                       }
                       setState(() {
                         loadingSpinner = false;
                       });
                     } catch (e) {
+                      setState(() {
+                        loadingSpinner = false;
+                        error = true;
+                      });
                       print(e);
                     }
                   })

@@ -1,3 +1,4 @@
+import 'package:arvent/eventScreen/payments_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:arvent/constants.dart';
 
@@ -195,7 +196,9 @@ class _EventScreenState extends State<EventScreen> {
                 color: orange,
                 borderRadius: BorderRadius.circular(16.0),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, PaymentScreen.id);
+                  },
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(

@@ -16,7 +16,7 @@ class _MainLoadingScreenState extends State<MainLoadingScreen> {
     final assetBundle = DefaultAssetBundle.of(context);
     final data = await assetBundle.loadString("assets/events.json");
     body = json.decode(data);
-    Navigator.push(
+    Navigator.pushReplacement(
         context,
         MaterialPageRoute(
             builder: (context) => MainScreen(

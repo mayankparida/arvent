@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arvent">
    <application
-        android:label="arvent"
+        android:label="ARVent"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

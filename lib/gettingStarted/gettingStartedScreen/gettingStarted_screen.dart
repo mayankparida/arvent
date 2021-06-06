@@ -72,18 +72,29 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       width: 300,
                       child: Image.asset("images/pic1.png"),
                     ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          "AR Vent",
-                          style: TextStyle(
-                              color: Colors.black87,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Text(
+                            "AR",
+                            style: TextStyle(
+                                color: orange,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30.0),
+                          ),
                         ),
-                      ),
-                    ),
+                        Center(
+                          child: Text(
+                            "Vent",
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30.0),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
                 Column(
@@ -99,7 +110,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                         child: Text(
                           "Experience events in AR like never before",
                           style: TextStyle(
-                              color: Colors.black87,
+                              color: orange,
                               fontWeight: FontWeight.bold,
                               fontSize: 30.0),
                         ),
@@ -118,7 +129,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       child: Text(
                         "Find event you love",
                         style: TextStyle(
-                            color: Colors.black87,
+                            color: Colors.blue,
                             fontWeight: FontWeight.bold,
                             fontSize: 30.0),
                       ),
@@ -136,7 +147,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       child: Text(
                         "Host your own event",
                         style: TextStyle(
-                            color: Colors.black87,
+                            color: orange,
                             fontWeight: FontWeight.bold,
                             fontSize: 30.0),
                       ),
@@ -180,7 +191,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
               ),
               onPressed: () {
                 if (page == 3) {
-                  Navigator.pushNamed(context, SplashScreen.id);
+                  Navigator.pushReplacementNamed(context, SplashScreen.id);
                 }
                 controller.nextPage(duration: duration, curve: swipe);
                 setState(() {

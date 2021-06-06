@@ -1,5 +1,6 @@
 import 'package:arvent/authentication/splash/splash_screen.dart';
 import 'package:arvent/constants.dart';
+import 'package:arvent/gettingStarted/gettingStartedScreen/gettingStarted_screen.dart';
 import 'package:arvent/mainScreen/main/mainLoading_screen.dart';
 import 'package:arvent/mainScreen/main/mainScreen.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var email = prefs.getString('email');
     if (email != null) {
-      Navigator.pushNamed(context, MainLoadingScreen.id);
+      Navigator.pushReplacementNamed(context, MainLoadingScreen.id);
     } else {
-      Navigator.pushNamed(context, SplashScreen.id);
+      Navigator.pushReplacementNamed(context, GettingStartedScreen.id);
     }
   }
 

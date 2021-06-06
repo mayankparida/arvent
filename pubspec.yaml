@@ -26,6 +26,7 @@ dependencies:
   flutter_spinkit: ^4.1.2+1
   firebase_core: ^0.7.0
   firebase_auth: ^0.20.1
+  webview_flutter: ^2.0.8
   flutter:
     sdk: flutter
 
