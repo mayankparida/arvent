@@ -1,6 +1,7 @@
 import 'package:arvent/eventScreen/payments_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:arvent/constants.dart';
+import 'package:video_player_360/video_player_360.dart';
 
 class EventScreen extends StatefulWidget {
   EventScreen({this.body, this.index});
@@ -78,31 +79,37 @@ class _EventScreenState extends State<EventScreen> {
                   const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
               child: Row(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Color(0xFF7750FA),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 15.0),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.high_quality,
-                            color: Colors.white,
-                            size: 25.0,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              "Virtual Reality Experience (Beta)",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16.0,
-                                  color: Colors.white),
+                  GestureDetector(
+                    onTap: () async {
+                      await VideoPlayer360.playVideoURL(
+                          "https://github.com/stephangopaul/video_samples/blob/master/gb.mp4?raw=true");
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xFF7750FA),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 15.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.high_quality,
+                              color: Colors.white,
+                              size: 25.0,
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                "Virtual Reality Experience (Beta)",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16.0,
+                                    color: Colors.white),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
